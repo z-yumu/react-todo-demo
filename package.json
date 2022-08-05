@@ -151,6 +151,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.18.10"
+    "@babel/plugin-proposal-decorators": "^7.18.10",
+    "prettier": "^2.7.1"
   }
 }
