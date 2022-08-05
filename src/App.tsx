@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+// import logo from './logo.svg';
+import "./App.css";
+import { Get } from "./decorator/methods.decorator";
+import Rxjs from "./rxjs/Rxjs";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends Component {
+  @Get("aaaaaaa")
+  test(txt: string) {
+    console.log(txt)
+  }
+  render() {
+    return (
+      <>
+        <Rxjs />
+        <div
+          onClick={() => {
+            this.test("a");
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          test
+        </div>
+      </>
+    )
+  }
 }
 
 export default App;
