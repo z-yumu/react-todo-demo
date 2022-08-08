@@ -7,6 +7,7 @@ import React, {
     useEffect,
 } from 'react'
 // 响应式编程是一种面向数据流和变化传播的编程范式。这意味着可以在编程语言中很方便地表达静态或动态的数据流
+// 函数式编程(函数的柯里化) 高阶函数 
 import { fromEvent, Observable,throttleTime,scan } from 'rxjs'
 
 const Rxjs: FC = (): ReactElement => {
