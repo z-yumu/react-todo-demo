@@ -9,7 +9,10 @@ import React, {
     createContext,
     // useContext
 } from 'react'
-import store from '../store'
+import { AppDispatch, AppState } from '../store'
+import { Button } from 'antd';
+
+import styles from './index.module.scss'
 
 // import { RouteComponentProps } from 'react-router-dom';
 
@@ -49,8 +52,8 @@ const Base: FC<Props> = (props): ReactElement => {
 
     useEffect(() => {
         // 不写参数全部触发，[]为不触发
-        console.log(spanRef)
-        console.log(num)
+        // console.log(spanRef)
+        // console.log(num)
     }, [num])
 
     const addNum = () => {
@@ -61,7 +64,11 @@ const Base: FC<Props> = (props): ReactElement => {
         <NumContext.Provider value={{ num }}>
             <Fragment>
                 <div>
-                    {name}
+                    <Button type="primary">Button</Button>
+                    <div className={styles.box}>
+                        <span>{name}</span>
+                    </div>
+                    
                     {msg}
                     <button onClick={props.changeMsg}>修改</button>
                     <Father />
@@ -73,13 +80,13 @@ const Base: FC<Props> = (props): ReactElement => {
     )
 }
 
-const mapStateToProps = (state: {msg:''}) => {
+const mapStateToProps = (state: AppState) => {
     return {
         msg: state.msg,
     }
 }
 // (action:{type:string,value:string})=>void
-const mapDispatchToProps = (dispatch: typeof store.dispatch) => {
+const mapDispatchToProps = (dispatch: AppDispatch) => {
     return {
         // changeMsg:function(){}的简写 key:value
         changeMsg() {
