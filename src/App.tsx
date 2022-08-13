@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import './App.css'
 import { Get } from './decorator/methods.decorator'
 // import Rxjs from "./rxjs/Rxjs"
-import RxjsRquest from './rxjs/Rxjs.request'
-import Base from './practise/Base'
-import Debounce from './debounce/Index'
+import RxjsRquest from './components/rxjs/Rxjs.request'
+import Base from './components/practise/Base'
+import Debounce from './components/debounce/Index'
 
 class App extends Component {
     @Get('aaaaaaa')

@@ -9,7 +9,7 @@ import React, {
     createContext,
     // useContext
 } from 'react'
-import { AppDispatch, AppState } from '../store'
+import { AppDispatch, AppState } from '../../store'
 import { Button } from 'antd';
 
 import styles from './index.module.scss'

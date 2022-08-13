@@ -1,4 +1,4 @@
-import {FC, ReactElement, SyntheticEvent, useEffect, useRef} from 'react'
+import React, { ChangeEvent, FC, ReactElement } from 'react'
 import { Input } from 'antd'
 
 // 怎么知道e的类型????  question
@@ -30,26 +30,33 @@ const Debounce: FC = (): ReactElement => {
     //     inputDom.addEventListener('input',debouncFun(()=>console.log('log here')))
     // },[inputRef])
 
+    const onChangeFun = function (e: ChangeEvent<HTMLInputElement>): void {
+        // type ChangeEventHandler<T = Element> = EventHandler<ChangeEvent<T>>
 
+        // 多个参数类型
+        // function swap<T, U>(tuple: [T, U]): [U, T] {
+        //     return [tuple[1], tuple[0]]
+        // }
+        // swap([7, 'seven']) 
+        // ['seven', 7]
 
-    const onChangeFun = function (e:SyntheticEvent<HTMLInputElement>){
-        // let input = (e.target) as HTMLInputElement
-        // console.log(input.value)
+        let val = e.target.value
+        console.log(val, '=============>')
     }
- 
+
     return (
         <>
             {/*<input type="text" className={'input'} ref={ inputRef }/>*/}
-            <Input onChange={ onChangeFun } />
+            <Input onChange={onChangeFun} style={{ width: '150px' }} />
         </>
     )
 }
 
 export default Debounce
 
-   // const debounc = function (){
-    //     // arguments传入的参数对象
-    //     console.log(arguments,'arguments')
-    // }
-    // @ts-ignore
-    // debounc(1,3,5,7)
+// const debounc = function (){
+//     // arguments传入的参数对象
+//     console.log(arguments,'arguments')
+// }
+// @ts-ignore
+// debounc(1,3,5,7)
