@@ -6,6 +6,7 @@ import { Get } from './decorator/methods.decorator'
 import RxjsRquest from './components/rxjs/Rxjs.request'
 import Base from './components/practise/Base'
 import Debounce from './components/debounce/Index'
+import TodoList from './components/todo-list'
 
 class App extends Component {
     @Get('aaaaaaa')
@@ -15,7 +16,8 @@ class App extends Component {
     render() {
         return (
             <>
-                <Debounce />
+                <TodoList />
+                {/* <Debounce /> */}
                 {/* <Base name={'testName'} /> */}
                 {/* <RxjsRquest /> */}
                 {/* <Rxjs /> */}
